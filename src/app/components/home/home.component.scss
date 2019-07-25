@@ -1,0 +1,33 @@
+@import '../../../assets/css/palette';
+
+main {
+    background-color: $windows-green;
+    height: 100%;
+    width: 100%;
+    display: grid;
+
+    .icon {
+        height: 75px;
+        width: 75px;
+        background: transparent;
+        margin: 15px;
+        margin-bottom: 45px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        overflow: visible;
+        text-align: center;
+        font-size: 14px;
+
+        img {
+            margin-top: 15px;
+        }
+
+        h5 {
+            position: relative;
+            bottom: 0;
+            top: 35px;
+        }
+    }
+}

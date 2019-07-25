@@ -1,0 +1,8 @@
+<main>
+  <dts-select-container [selectOnDrag]="true" [(selectedItems)]="selectedDocuments" (select)="logger($event)">
+      <div [dtsSelectItem]="icon" *ngFor="let icon of desktopIcons" class="icon">
+        <img src="./../../../assets/images/{{icon}}.png" alt="">
+        <h5>{{ icon }}</h5>
+      </div>
+  </dts-select-container>
+</main>

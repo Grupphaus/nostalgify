@@ -1,0 +1,45 @@
+@import '../../../assets/css/palette';
+
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: $windows-gray;
+    border-top: 5px solid $windows-gray-light;
+    height: 65px;
+    position: fixed;
+    bottom: 0;
+    padding: 5px;
+}
+
+button {
+    height: 100%;
+    border-bottom: 3px solid $spotify-black;
+    border-right: 3px solid $spotify-black;
+    border-top: 3px solid #fff;
+    background-color: $windows-gray;
+    display: flex;
+    align-items: center;
+    padding-right: 8px;
+
+    .logo {
+        background-image: url(./../../../assets/images/logo.png);
+        height: 37px;
+        width: 37px;
+        background-size: cover;
+        image-rendering: pixelated;
+        margin-right: 5px;
+    }
+
+    &*, &:focus, &:hover, &:active, &:visited {
+        cursor: url(../../../assets/MousePointer.png), auto;
+    }
+
+    &:focus {
+        border-top-color: $spotify-black;
+        border-left: 3px solid $spotify-black;
+        border-bottom-color: #fff;
+        border-right-color: #fff;
+   }
+}
