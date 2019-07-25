@@ -1,4 +1,34 @@
+<menu *ngIf="this.menu">
+  <div class="side">
+    <p class="brand">Nostalgify<span>95</span></p>
+  </div>
+  <div class="menu-list--container">
+    <div (mouseover)="expand(nav)" *ngFor="let nav of menuList" class="menu-list">
+      <h6>{{ nav }}</h6>
+      <div *ngIf="nav === 'Programs' || nav === 'Documents'"
+        class="triangle"
+      ></div>
+    </div>
+    <div *ngIf="this.programsExpand" class="programs">
+      <div *ngFor="let app of appList" class="menu-list--inner">
+        <img src="./../../../assets/images/{{app}}.png" alt="">
+        <h6>{{ app }}</h6>
+      </div>
+    </div>
+    <div *ngIf="this.documentsExpand" class="documents">
+        <div *ngFor="let document of documentList" class="menu-list--inner">
+          <h6>{{ document }}</h6>
+          <div *ngIf="nav === 'Programs' || nav === 'Documents'"
+            class="triangle"
+          ></div>
+        </div>
+    </div>
+  </div>
+</menu>
 <div class="container">
-  <button>
-    <div class="logo"></div> Start</button>
+  <button id="start" (click)="toggleMenu()" (focusout)="this.menu = false">
+    <div class="logo"></div>
+    Start
+  </button>
+  <div class="clock">{{ clock | date: "shortTime" }}</div>
 </div>

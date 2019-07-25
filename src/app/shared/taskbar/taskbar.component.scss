@@ -43,3 +43,123 @@ button {
         border-right-color: #fff;
    }
 }
+
+menu {
+    min-height: 600px;
+    width: 400px;
+    background: $windows-gray;
+    position: absolute;
+    bottom: 65px;
+    left: 3px;
+    border-top: 4px solid #fff;
+    border-left: 4px solid #fff;
+    border-right: 4px solid $spotify-black;
+    border-bottom: 4px solid $spotify-black;
+    z-index: 50;
+    display: flex;
+
+    .side {
+        height: 600px;
+        width: 65px;
+        background-color: $windows-gray-dark;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .menu-list--container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .menu-list {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            padding: 25px;
+    
+            &:hover {
+                background-color: $windows-blue;
+                color: #fff;
+                text-shadow: 1px 1px rgba(0, 0, 0, .3);
+    
+                .triangle {
+                    border-color: transparent transparent transparent #fff;
+                }
+            }
+    
+            .triangle {
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 6px 0 6px 12px;
+                border-color: transparent transparent transparent $spotify-black;
+            }
+        }
+
+        .programs {
+            @extend menu;
+            width: 250px;
+            min-height: auto;
+            bottom: 190px;
+            position: absolute;
+            background-color: $windows-gray;
+            z-index: 300;
+            left: 380px;
+            flex-direction: column;
+
+            .menu-list--inner {
+                @extend .menu-list;
+                justify-content: flex-start;
+                
+                h6 {
+                    margin-left: 16px;
+                }
+
+            }
+        }
+
+        .documents {
+            @extend .programs;
+            bottom: 336px;
+
+            .menu-list--inner {
+                justify-content: flex-start;
+            }
+        }
+    }
+
+}
+
+.brand {
+    transform: rotate(270deg);
+    position: relative;
+    bottom: 40px;
+    color: $windows-gray;
+    font-size: 25px;
+    font-weight: 900;
+    padding-bottom: 7px;
+    text-shadow: 1px 1px rgba(0, 0, 0, .3);
+
+    span {
+        color: #fff;
+        font-size: 27px;
+    }
+}
+
+.clock {
+    height: 50px;
+    border-top: 2px solid $windows-gray-dark;
+    border-right: 2px solid $windows-gray-light;
+    border-bottom: 2px solid $windows-gray-light;
+    border-left: 2px solid $windows-gray-dark;
+    background-color: $windows-gray;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    margin-right: 5px;
+    font-size: 12px;
+    padding: 5px 10px;
+    font-weight: 400;
+}
