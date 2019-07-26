@@ -16,6 +16,10 @@ import { WindowComponent } from './shared/window/window.component';
 // ROUTES
 import { ROUTES } from './app.routes';
 
+// SERVICES
+import { SpotifyService } from './services/spotify.service';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,12 +31,15 @@ import { ROUTES } from './app.routes';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     RouterModule.forRoot(ROUTES),
     DragToSelectModule.forRoot()
 
   ],
-  providers: [],
+  providers: [
+    SpotifyService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
