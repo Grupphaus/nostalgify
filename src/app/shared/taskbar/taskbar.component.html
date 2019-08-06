@@ -3,9 +3,9 @@
     <p class="brand">Nostalgify<span>95</span></p>
   </div>
   <div class="menu-list--container">
-    <div (mouseover)="expand(nav)" *ngFor="let nav of menuList" class="menu-list">
-      <h6>{{ nav }}</h6>
-      <div *ngIf="nav === 'Programs' || nav === 'Documents'"
+    <div (mouseover)="expand(menu)" *ngFor="let menu of menuList" class="menu-list">
+      <h6>{{ menu }}</h6>
+      <div *ngIf="menu === 'Programs' || menu === 'Documents'"
         class="triangle"
       ></div>
     </div>
@@ -18,7 +18,7 @@
     <div *ngIf="this.documentsExpand" class="documents">
         <div *ngFor="let document of documentList" class="menu-list--inner">
           <h6>{{ document }}</h6>
-          <div *ngIf="nav === 'Programs' || nav === 'Documents'"
+          <div *ngIf="menu === 'Programs' || menu === 'Documents'"
             class="triangle"
           ></div>
         </div>
@@ -26,7 +26,7 @@
   </div>
 </menu>
 <div class="container">
-  <button id="start" (click)="toggleMenu()" (focusout)="this.menu = false">
+  <button id="start" (click)="toggleMenu()" (focusout)="toggleMenu()">
     <div class="logo"></div>
     Start
   </button>

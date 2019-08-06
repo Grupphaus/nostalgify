@@ -4,9 +4,12 @@
   src: url(./assets/px_sans_nouveaux.ttf);
 }
 
+@import './assets/css/palette';
+
 html,
 body {
   height: 100%;
+  overflow: hidden;
 }
 
 * {
@@ -193,5 +196,6 @@ table {
   box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
   text-shadow: 2px 2px rgba(0, 0, 0, 0.1);
   color: #fff;
-  background-color: #394dcd; }
+  background-color: $windows-blue;
+}
 

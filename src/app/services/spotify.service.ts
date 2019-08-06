@@ -8,10 +8,10 @@ export class SpotifyService {
 
   getReleases() {
 
-    // const header = new HttpHeaders({
+    const headers = new HttpHeaders({
+      'Authorization': ''
+    });
 
-    // });
-
-    return this._http.get('https://api.spotify.com/v1/browse/new-releases');
+    return this._http.get('https://api.spotify.com/v1/browse/new-releases', { headers });
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-window',
@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class WindowComponent implements OnInit {
 
   constructor() { }
+
+  @Input() name: string = 'window';
+  @Input() menu: boolean = true;
 
   ngOnInit() {
   }

@@ -7,13 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TaskbarComponent implements OnInit {
 
-  @Input() public menu = true;
+  @Input() public menu = false;
+  @Input() programsExpand: boolean;
+  @Input() documentsExpand: boolean;
   public menuList = ['Programs', 'Documents', 'Settings', 'Search', 'Run...'];
   public appList = ['My-App', 'Playlists', 'Artists', 'Search', 'Recycle'];
   public documentList = ['asdasd.xls', 'ddd.txt', 'component.css', 'github.png'];
   public clock: Date;
-  public programsExpand: boolean;
-  public documentsExpand: boolean;
 
   constructor() { }
 
@@ -31,11 +31,13 @@ export class TaskbarComponent implements OnInit {
       this.menu = true;
     } else {
       this.menu = false;
+      this.documentsExpand = false;
+      this.programsExpand = false;
     }
   }
 
-  expand(nav) {
-    switch (nav) {
+  expand(menu) {
+    switch (menu) {
       case 'Programs':
         this.programsExpand = true;
         this.documentsExpand = false;

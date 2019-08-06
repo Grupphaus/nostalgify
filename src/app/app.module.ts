@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { DragToSelectModule } from 'ngx-drag-to-select';
+import { AngularDraggableModule } from 'angular2-draggable';
+import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
@@ -18,7 +21,6 @@ import { ROUTES } from './app.routes';
 
 // SERVICES
 import { SpotifyService } from './services/spotify.service';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,11 +33,12 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     HttpClientModule,
     AppRoutingModule,
     RouterModule.forRoot(ROUTES),
-    DragToSelectModule.forRoot()
-
+    DragToSelectModule.forRoot(),
+    AngularDraggableModule
   ],
   providers: [
     SpotifyService

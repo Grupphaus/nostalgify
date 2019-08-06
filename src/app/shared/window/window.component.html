@@ -1,3 +1,22 @@
-<p>
-  window works!
-</p>
+<div ngResizable [rzHandles]="'se'" [rzMinWidth]="350" [rzMinHeight]="500" ngDraggable [handle]="windowHandle" class="window-container">
+  <div #windowHandle class="handle">
+    <div class="title">{{ name }}</div>
+    <div class="buttons">
+      <button class="button minimize">&#45;</button>
+      <button class="button maximize">
+        <div class="square"></div>
+      </button>
+      <button class="button close">&#215;</button>
+    </div>
+  </div>
+  <div class="menu" [hidden]="!menu">
+    <div class="menu-item">File</div>
+    <div class="menu-item">View</div>
+    <div class="menu-item">Help</div>
+  </div>
+  <main></main>
+  <div class="window-bottom">
+      <div class="resize"></div>
+  </div>
+</div>
+<!-- <router-outlet></router-outlet> -->
