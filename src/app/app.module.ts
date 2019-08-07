@@ -11,8 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 // COMPONENTS
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { PlaylistsComponent } from './components/playlists/playlists.component';
+import { ArtistsComponent } from './components/artists/artists.component';
 import { SearchComponent } from './components/search/search.component';
-import { ArtistComponent } from './components/artist/artist.component';
 import { TaskbarComponent } from './shared/taskbar/taskbar.component';
 import { WindowComponent } from './shared/window/window.component';
 
@@ -21,15 +22,18 @@ import { ROUTES } from './app.routes';
 
 // SERVICES
 import { SpotifyService } from './services/spotify.service';
+import { ArtistBioComponent } from './components/artists/components/artist-bio/artist-bio.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    PlaylistsComponent,
+    ArtistsComponent,
     SearchComponent,
-    ArtistComponent,
     TaskbarComponent,
-    WindowComponent
+    WindowComponent,
+    ArtistBioComponent,
   ],
   imports: [
     BrowserModule,

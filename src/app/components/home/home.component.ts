@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,25 +9,21 @@ import { SpotifyService } from '../../services/spotify.service';
 })
 export class HomeComponent implements OnInit {
 
-  public desktopIcons = ['My-App', 'Playlists',  'Artists', 'Search', 'Recycle'];
-  public selectedDocuments = [];
+  constructor(private _spotify: SpotifyService, private route: ActivatedRoute) { }
 
-  constructor(private _spotify: SpotifyService) { }
+  newReleases: any[] = [];
 
   ngOnInit() {
     this._spotify.getReleases()
     .subscribe(
-      response => {
-        console.log(response);
+      (response: any) => {
+        this.newReleases = response.albums.items;
+        console.log(this.newReleases);
       },
       err => {
         console.log(err);
       }
     );
-  }
-
-  logger(stuff): any {
-    console.log(stuff)
   }
 
 }

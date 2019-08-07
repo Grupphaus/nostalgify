@@ -1,3 +1,10 @@
-<router-outlet></router-outlet>
+<main>
+    <dts-select-container [selectOnDrag]="true" [(selectedItems)]="selectedDocuments"> <!-- (select)="logger($event)" -->
+        <div (click)="navigate(icon)" [dtsSelectItem]="icon" *ngFor="let icon of desktopIcons" class="icon">
+          <img src="./../../../assets/images/{{icon}}.png" alt="">
+          <h5>{{ icon }}</h5>
+        </div>
+    </dts-select-container>
+  </main>
 <app-window></app-window>
 <app-taskbar></app-taskbar>

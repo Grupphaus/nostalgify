@@ -1,8 +1,18 @@
-<main>
-  <dts-select-container [selectOnDrag]="true" [(selectedItems)]="selectedDocuments" (select)="logger($event)">
-      <div [dtsSelectItem]="icon" *ngFor="let icon of desktopIcons" class="icon">
-        <img src="./../../../assets/images/{{icon}}.png" alt="">
-        <h5>{{ icon }}</h5>
+<div class="container">
+  <div class="header">
+    <img src="./../../../assets/images/logo.png" width="35px" height="35px" alt="Spotify Logo">
+    <h1>Nostalgify95 - New Releases</h1>
+  </div>
+  <div class="releases-container">
+    <div *ngFor="let release of newReleases; let i = index">
+      <div class="release-card">
+        <a [href]="release.external_urls.spotify" target="_blank" rel="nofollow">
+          <img [src]="release.images[1].url" height="200px" width="200px"
+            [title]="release.name + ', ' + release.artists[0].name"
+            [alt]="release.name + ', ' + release.artists[0].name">
+        </a>
+        <a [routerLink]="['/artist-bio/' + release.artists[0].name.split(' ').join('_')]">{{ release.artists[0].name }}</a>
       </div>
-  </dts-select-container>
-</main>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
-<div ngResizable [rzHandles]="'se'" [rzMinWidth]="350" [rzMinHeight]="500" ngDraggable [handle]="windowHandle" class="window-container">
+<div ngResizable [rzHandles]="'se'" [rzMinWidth]="415" [rzMinHeight]="500" ngDraggable [handle]="windowHandle" class="window-container">
   <div #windowHandle class="handle">
-    <div class="title">{{ name }}</div>
+    <div class="title">{{ name }} - Nostalgify Explorer</div>
     <div class="buttons">
       <button class="button minimize">&#45;</button>
       <button class="button maximize">
@@ -14,9 +14,10 @@
     <div class="menu-item">View</div>
     <div class="menu-item">Help</div>
   </div>
-  <main></main>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
   <div class="window-bottom">
       <div class="resize"></div>
   </div>
 </div>
-<!-- <router-outlet></router-outlet> -->

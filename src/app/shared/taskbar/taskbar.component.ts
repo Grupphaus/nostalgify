@@ -10,7 +10,7 @@ export class TaskbarComponent implements OnInit {
   @Input() public menu = false;
   @Input() programsExpand: boolean;
   @Input() documentsExpand: boolean;
-  public menuList = ['Programs', 'Documents', 'Settings', 'Search', 'Run...'];
+  public menuList = ['Programs', 'Documents', 'About', 'Run...'];
   public appList = ['My-App', 'Playlists', 'Artists', 'Search', 'Recycle'];
   public documentList = ['asdasd.xls', 'ddd.txt', 'component.css', 'github.png'];
   public clock: Date;
