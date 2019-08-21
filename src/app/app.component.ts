@@ -11,7 +11,7 @@ export class AppComponent {
   constructor(private router: Router) { }
 
   title = 'Nostalgify95';
-  public desktopIcons = ['Home', 'Playlists',  'Artists', 'Search', 'Recycle'];
+  public desktopIcons = ['Home', 'Playlists', 'Search', 'Recycle'];
   public selectedDocuments = [];
 
   logger(stuff: any) {
